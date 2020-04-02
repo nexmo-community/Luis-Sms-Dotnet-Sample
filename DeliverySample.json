@@ -1,0 +1,7381 @@
+{
+  "luis_schema_version": "4.0.0",
+  "versionId": "0.1",
+  "name": "DeliverySample",
+  "desc": "",
+  "culture": "en-us",
+  "tokenizerVersion": "1.0.0",
+  "intents": [
+    {
+      "name": "None"
+    },
+    {
+      "name": "OrderFood"
+    }
+  ],
+  "entities": [
+    {
+      "name": "City",
+      "roles": []
+    },
+    {
+      "name": "Food",
+      "roles": []
+    },
+    {
+      "name": "RestaurantReservation.PlaceName",
+      "inherits": {
+        "domain_name": "RestaurantReservation",
+        "model_name": "PlaceName"
+      },
+      "roles": []
+    },
+    {
+      "name": "State",
+      "roles": []
+    },
+    {
+      "name": "StreetName",
+      "roles": []
+    },
+    {
+      "name": "StreetNumber",
+      "roles": []
+    },
+    {
+      "name": "ZipCode",
+      "roles": []
+    }
+  ],
+  "composites": [
+    {
+      "name": "Address",
+      "children": [
+        "StreetName",
+        "StreetNumber",
+        "ZipCode",
+        "City",
+        "State"
+      ],
+      "roles": []
+    }
+  ],
+  "closedLists": [
+    {
+      "name": "Method",
+      "subLists": [
+        {
+          "canonicalForm": "Pickup",
+          "list": [
+            "take-away",
+            "take away",
+            "pick up"
+          ]
+        },
+        {
+          "canonicalForm": "Delivery",
+          "list": [
+            "dropped off",
+            "deliver",
+            "delivered",
+            "sent to",
+            "send me",
+            "send"
+          ]
+        }
+      ],
+      "roles": []
+    }
+  ],
+  "patternAnyEntities": [],
+  "regex_entities": [],
+  "prebuiltEntities": [],
+  "model_features": [],
+  "regex_features": [],
+  "patterns": [
+    {
+      "pattern": "{Method} {Food} to {StreetNumber} {StreetName}. {City}, {State} {ZipCode} from {RestaurantReservation.PlaceName}",
+      "intent": "OrderFood"
+    },
+    {
+      "pattern": "{Method} {Food} to {Address} from {RestaurantReservation.PlaceName}",
+      "intent": "OrderFood"
+    }
+  ],
+  "utterances": [
+    {
+      "text": "0 star for wendy's in kirkland",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "3 stars for future flight of boeing in everett",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "3 stars for space needle in seattle",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "5 stars for pike street market in seattle downtown on this travel site",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "8:00 's reservation at laurelwood pub and brewery needs to be for six people instead of ten",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 23,
+          "endPos": 48
+        }
+      ]
+    },
+    {
+      "text": "8pm rather than 8:15pm at chez bruce",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 26,
+          "endPos": 35
+        }
+      ]
+    },
+    {
+      "text": "a menu for quaker steak and lube",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "a north side tag agency in tulsa oklahoma phone number",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "a telephone number for british airways in italy",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "a telephone number for eleven oh one kettering squadron",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "abort a table for 4 at chez billy sud at six tonight",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 23,
+          "endPos": 36
+        }
+      ]
+    },
+    {
+      "text": "adair county health department hours of operation",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add great clips to my favorites",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add helensburgh to my favorite places",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add highland pub to my favorites list",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add jinx to my favorite places",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add k mart to favorite list",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add looks salon to favorite list",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add lowe's to my favorite places",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add olive garden to favorite list",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add park street pizza to my favorites",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add perry hall bowling alley to my favorites",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add prime 9 steakhouse to my favorites",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add red barn on route 6 to my favorites list",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add starbucks on 1st ave to my favorites list",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add subway to my list of favorites",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add to six people for reservation at per se",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 37,
+          "endPos": 42
+        }
+      ]
+    },
+    {
+      "text": "address bellevue square",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "address for apple valley petco",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "address for dmv on powell in portland oregon",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "address for express scripts bloomington minnesota office",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "address for highland county ohio health department",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "address for king county juvenile detention center",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "address for local walmart",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "address for loughborough urgent care centre",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "address for the color room on lincoln avenue in chicago",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "address for walmart on bechtle avenue in springfield ohio",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "address musician's friend kansas city missouri",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "address of bed bath and beyond in pentagon city",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "address south side restaurant",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "address to clear creek apartments overland park kansas",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "address to the golden corral",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "address to times square",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "alice reataurant dinner is off, cancel it",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 0,
+          "endPos": 15
+        }
+      ]
+    },
+    {
+      "text": "al's pizzeria in castile new york s menu",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "amend reservation at marc forgione to include 5 people for my meal 6:00 p.m. at 7:00 p.m.",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 21,
+          "endPos": 33
+        }
+      ]
+    },
+    {
+      "text": "amend that three person reservation at aquagrill from 7:00 to 7:30 pm",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 39,
+          "endPos": 47
+        }
+      ]
+    },
+    {
+      "text": "are you able to change the reservation at st. francis winery & vineyards to five people",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 42,
+          "endPos": 71
+        }
+      ]
+    },
+    {
+      "text": "bel air grill restaurant price ranges in maryville tn",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "bel air grills price ranges in maryville tn",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "bellevue optometry clinic address",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "best buy in burbank store hours",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "book a reservation at noon with 4 people in sushi bar",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 44,
+          "endPos": 52
+        }
+      ]
+    },
+    {
+      "text": "book a table at sushi of gari on 79th ave",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 16,
+          "endPos": 28
+        }
+      ]
+    },
+    {
+      "text": "book a table for 6 at long beach seafood restaurant in seattle",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 22,
+          "endPos": 50
+        }
+      ]
+    },
+    {
+      "text": "book me a table at australia dairy company that is good for groups",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 19,
+          "endPos": 41
+        }
+      ]
+    },
+    {
+      "text": "book me a table at the lartusi",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 23,
+          "endPos": 29
+        }
+      ]
+    },
+    {
+      "text": "bothell indian temple address",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "bring up the menu for dominos pizza",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "bring up the menu for olive garden",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "building 43 microsoft campus address",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "call 987 stadium drive kelly s belly",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "call and cancel my reservation at gourmet burger kitchen for three tonight at ten to nine",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 34,
+          "endPos": 55
+        }
+      ]
+    },
+    {
+      "text": "call and check on my reservation for six at pommes frites restaurant",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 44,
+          "endPos": 56
+        }
+      ]
+    },
+    {
+      "text": "call bob's bar on main street for me",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "call cathy's restaurant to update the people to 5",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 5,
+          "endPos": 22
+        }
+      ]
+    },
+    {
+      "text": "call comfort dental in silverthorne colorado",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "call cricket on lyell avenue in rochester new york",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "call cvs pharmacy on the valley forge road lansdale pennsylvania",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "call drums auto on main street in rock hill south carolina",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "call first honda of simi valley",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "call fitness connection in greenspoint mall",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "call gamestop germantown commons",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "call goodwill federal highway delray beach",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "call hertel post office",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "call jc penney in foothills mall",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "call knx traffic on speaker",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "call lake union veterinary clinic",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "call larry's in mill creek",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "call long's transport",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "call marshall's junkyard in jeffersonville indiana",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "call medford oregon buffalo wild wings",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "call metropolitan museum of art roof garden and make a reservation",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 5,
+          "endPos": 42
+        }
+      ]
+    },
+    {
+      "text": "call middleton hospital in middletown connecticut human resources department",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "call nearest toys r us",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "call shopko pharmacy of spanish fork",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "call shoto s restaurant in lexington",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "call sprint in lawrence kansas",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "call st. john to make reservations",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 5,
+          "endPos": 12
+        }
+      ]
+    },
+    {
+      "text": "call staples at aiken south carolina",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "call the apple store at north point mall",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "call the bellevue starbucks",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "call the courtyard by marriott at los angeles airport",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "call the hogie shop on walnut street",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "call the hyatt regency bellevue seattle",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "call the local domino's",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "call the red lobster on lone hill using skype",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "call the space needle in seattle",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "call the ymca in stevens point",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "call up taco bell on university ave in st paul",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "call walmart cattlemen road sarasota florida pharmacy",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "can i change my reservation at fairwood tomorrow",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 31,
+          "endPos": 38
+        }
+      ]
+    },
+    {
+      "text": "can i change my reservation tonight at fairwood to 6 people instead of five",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 39,
+          "endPos": 46
+        }
+      ]
+    },
+    {
+      "text": "can i get a cheese pizza from cheesecake factory delivered to 1234 carltones road viera fl 32940",
+      "intent": "OrderFood",
+      "entities": [
+        {
+          "entity": "Food",
+          "startPos": 12,
+          "endPos": 23
+        },
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 30,
+          "endPos": 47
+        },
+        {
+          "entity": "StreetNumber",
+          "startPos": 62,
+          "endPos": 65
+        },
+        {
+          "entity": "Address",
+          "startPos": 62,
+          "endPos": 95
+        },
+        {
+          "entity": "StreetName",
+          "startPos": 67,
+          "endPos": 80
+        },
+        {
+          "entity": "City",
+          "startPos": 82,
+          "endPos": 86
+        },
+        {
+          "entity": "State",
+          "startPos": 88,
+          "endPos": 89
+        },
+        {
+          "entity": "ZipCode",
+          "startPos": 91,
+          "endPos": 95
+        }
+      ]
+    },
+    {
+      "text": "can i get a chicken burrito from nando's chicken sent to 12 yemen road, cedar rapids iowa, 52227",
+      "intent": "OrderFood",
+      "entities": [
+        {
+          "entity": "Food",
+          "startPos": 12,
+          "endPos": 26
+        },
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 33,
+          "endPos": 47
+        },
+        {
+          "entity": "StreetNumber",
+          "startPos": 57,
+          "endPos": 58
+        },
+        {
+          "entity": "Address",
+          "startPos": 57,
+          "endPos": 95
+        },
+        {
+          "entity": "StreetName",
+          "startPos": 60,
+          "endPos": 69
+        },
+        {
+          "entity": "City",
+          "startPos": 72,
+          "endPos": 83
+        },
+        {
+          "entity": "State",
+          "startPos": 85,
+          "endPos": 88
+        },
+        {
+          "entity": "ZipCode",
+          "startPos": 91,
+          "endPos": 95
+        }
+      ]
+    },
+    {
+      "text": "can i get an order of chicken teriyaki delivered to 3010 meadow creek drive, lancaster ca, 93534",
+      "intent": "OrderFood",
+      "entities": [
+        {
+          "entity": "Food",
+          "startPos": 22,
+          "endPos": 37
+        },
+        {
+          "entity": "StreetNumber",
+          "startPos": 52,
+          "endPos": 55
+        },
+        {
+          "entity": "Address",
+          "startPos": 52,
+          "endPos": 95
+        },
+        {
+          "entity": "StreetName",
+          "startPos": 57,
+          "endPos": 74
+        },
+        {
+          "entity": "City",
+          "startPos": 77,
+          "endPos": 85
+        },
+        {
+          "entity": "State",
+          "startPos": 87,
+          "endPos": 88
+        },
+        {
+          "entity": "ZipCode",
+          "startPos": 91,
+          "endPos": 95
+        }
+      ]
+    },
+    {
+      "text": "can i get cheese fries from hot grill delivered to 12 windjammer drive hempfield pa, 17521",
+      "intent": "OrderFood",
+      "entities": [
+        {
+          "entity": "Food",
+          "startPos": 10,
+          "endPos": 21
+        },
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 28,
+          "endPos": 36
+        },
+        {
+          "entity": "StreetNumber",
+          "startPos": 51,
+          "endPos": 52
+        },
+        {
+          "entity": "Address",
+          "startPos": 51,
+          "endPos": 89
+        },
+        {
+          "entity": "StreetName",
+          "startPos": 54,
+          "endPos": 69
+        },
+        {
+          "entity": "City",
+          "startPos": 71,
+          "endPos": 79
+        },
+        {
+          "entity": "State",
+          "startPos": 81,
+          "endPos": 82
+        },
+        {
+          "entity": "ZipCode",
+          "startPos": 85,
+          "endPos": 89
+        }
+      ]
+    },
+    {
+      "text": "can i get drunkin noodles from joe's pizza delivered to 6543 carltones drive, viera fl 32940",
+      "intent": "OrderFood",
+      "entities": [
+        {
+          "entity": "Food",
+          "startPos": 10,
+          "endPos": 24
+        },
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 31,
+          "endPos": 41
+        },
+        {
+          "entity": "StreetNumber",
+          "startPos": 56,
+          "endPos": 59
+        },
+        {
+          "entity": "Address",
+          "startPos": 56,
+          "endPos": 91
+        },
+        {
+          "entity": "StreetName",
+          "startPos": 61,
+          "endPos": 75
+        },
+        {
+          "entity": "City",
+          "startPos": 78,
+          "endPos": 82
+        },
+        {
+          "entity": "State",
+          "startPos": 84,
+          "endPos": 85
+        },
+        {
+          "entity": "ZipCode",
+          "startPos": 87,
+          "endPos": 91
+        }
+      ]
+    },
+    {
+      "text": "can i get pad thai from hop bo's delivered to 7 lighthouse square, lake brightons nj, 07849?",
+      "intent": "OrderFood",
+      "entities": [
+        {
+          "entity": "Food",
+          "startPos": 10,
+          "endPos": 17
+        },
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 24,
+          "endPos": 29
+        },
+        {
+          "entity": "StreetNumber",
+          "startPos": 46,
+          "endPos": 46
+        },
+        {
+          "entity": "Address",
+          "startPos": 46,
+          "endPos": 90
+        },
+        {
+          "entity": "StreetName",
+          "startPos": 48,
+          "endPos": 64
+        },
+        {
+          "entity": "City",
+          "startPos": 67,
+          "endPos": 80
+        },
+        {
+          "entity": "State",
+          "startPos": 82,
+          "endPos": 83
+        },
+        {
+          "entity": "ZipCode",
+          "startPos": 86,
+          "endPos": 90
+        }
+      ]
+    },
+    {
+      "text": "can i get tacos from del taco delivered to 8 pleasent valley road, long valley nj, 07839",
+      "intent": "OrderFood",
+      "entities": [
+        {
+          "entity": "Food",
+          "startPos": 10,
+          "endPos": 14
+        },
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 21,
+          "endPos": 28
+        },
+        {
+          "entity": "StreetNumber",
+          "startPos": 43,
+          "endPos": 43
+        },
+        {
+          "entity": "Address",
+          "startPos": 43,
+          "endPos": 87
+        },
+        {
+          "entity": "StreetName",
+          "startPos": 45,
+          "endPos": 64
+        },
+        {
+          "entity": "City",
+          "startPos": 67,
+          "endPos": 77
+        },
+        {
+          "entity": "State",
+          "startPos": 79,
+          "endPos": 80
+        },
+        {
+          "entity": "ZipCode",
+          "startPos": 83,
+          "endPos": 87
+        }
+      ]
+    },
+    {
+      "text": "can i get the number for doctor lee dds maple grove",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "can i get the number to cvs on thirty fifth avenue and peoria",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "can i get the phone number for fergusons",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "can i get the phone number for midas in fair banks alaska",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "can i have the number for checker cab in las vegas nevada",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "can i have the number for north side catholic cemeteries pittsburgh pa",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "can i have the number for pine hills lodge",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "can i have the telephone number for daily fish in camden town",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "can i pick up a green curry from thai hana?",
+      "intent": "OrderFood",
+      "entities": [
+        {
+          "entity": "Food",
+          "startPos": 16,
+          "endPos": 26
+        },
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 33,
+          "endPos": 41
+        }
+      ]
+    },
+    {
+      "text": "can i pickup a italian sub from subway?",
+      "intent": "OrderFood",
+      "entities": [
+        {
+          "entity": "Food",
+          "startPos": 15,
+          "endPos": 25
+        },
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 32,
+          "endPos": 37
+        }
+      ]
+    },
+    {
+      "text": "can i pickup french toast from rutherford diner?",
+      "intent": "OrderFood",
+      "entities": [
+        {
+          "entity": "Food",
+          "startPos": 13,
+          "endPos": 24
+        },
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 31,
+          "endPos": 46
+        }
+      ]
+    },
+    {
+      "text": "can i pickup yellow curry from thai hana?",
+      "intent": "OrderFood",
+      "entities": [
+        {
+          "entity": "Food",
+          "startPos": 13,
+          "endPos": 24
+        },
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 31,
+          "endPos": 39
+        }
+      ]
+    },
+    {
+      "text": "can you deliver green curry from thai hana to 1005 river renaissance, east rutherford, nj 07849",
+      "intent": "OrderFood",
+      "entities": [
+        {
+          "entity": "Food",
+          "startPos": 16,
+          "endPos": 26
+        },
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 33,
+          "endPos": 41
+        },
+        {
+          "entity": "StreetNumber",
+          "startPos": 46,
+          "endPos": 49
+        },
+        {
+          "entity": "Address",
+          "startPos": 46,
+          "endPos": 94
+        },
+        {
+          "entity": "StreetName",
+          "startPos": 51,
+          "endPos": 67
+        },
+        {
+          "entity": "City",
+          "startPos": 70,
+          "endPos": 84
+        },
+        {
+          "entity": "State",
+          "startPos": 87,
+          "endPos": 88
+        },
+        {
+          "entity": "ZipCode",
+          "startPos": 90,
+          "endPos": 94
+        }
+      ]
+    },
+    {
+      "text": "can you send me a norrito bowl from tijuana flats to 12 wood bridge road, oceola california, 23455",
+      "intent": "OrderFood",
+      "entities": [
+        {
+          "entity": "Food",
+          "startPos": 18,
+          "endPos": 29
+        },
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 36,
+          "endPos": 48
+        },
+        {
+          "entity": "StreetNumber",
+          "startPos": 53,
+          "endPos": 54
+        },
+        {
+          "entity": "Address",
+          "startPos": 53,
+          "endPos": 97
+        },
+        {
+          "entity": "StreetName",
+          "startPos": 56,
+          "endPos": 71
+        },
+        {
+          "entity": "City",
+          "startPos": 74,
+          "endPos": 79
+        },
+        {
+          "entity": "State",
+          "startPos": 81,
+          "endPos": 90
+        },
+        {
+          "entity": "ZipCode",
+          "startPos": 93,
+          "endPos": 97
+        }
+      ]
+    },
+    {
+      "text": "can you send me an italian sub from joe's pizza to 2175 judge fran jamieson way, viera fl 32940?",
+      "intent": "OrderFood",
+      "entities": [
+        {
+          "entity": "Food",
+          "startPos": 19,
+          "endPos": 29
+        },
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 36,
+          "endPos": 46
+        },
+        {
+          "entity": "StreetNumber",
+          "startPos": 51,
+          "endPos": 54
+        },
+        {
+          "entity": "Address",
+          "startPos": 51,
+          "endPos": 94
+        },
+        {
+          "entity": "StreetName",
+          "startPos": 56,
+          "endPos": 78
+        },
+        {
+          "entity": "City",
+          "startPos": 81,
+          "endPos": 85
+        },
+        {
+          "entity": "State",
+          "startPos": 87,
+          "endPos": 88
+        },
+        {
+          "entity": "ZipCode",
+          "startPos": 90,
+          "endPos": 94
+        }
+      ]
+    },
+    {
+      "text": "can you tell me the time of the party in nanjing restaurant",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 41,
+          "endPos": 58
+        }
+      ]
+    },
+    {
+      "text": "cancel 7 o'clock 's reservation at l'entrecôte",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 35,
+          "endPos": 45
+        }
+      ]
+    },
+    {
+      "text": "cancel 7:00 p. m. asiate restaurant reservation for tomorrow's dinner",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 18,
+          "endPos": 23
+        }
+      ]
+    },
+    {
+      "text": "cancel a table for eight at peter luger steak house at 7:30 tonight in palo alto",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 28,
+          "endPos": 50
+        }
+      ]
+    },
+    {
+      "text": "cancel breakfast at bridge cafe 's",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 20,
+          "endPos": 30
+        }
+      ]
+    },
+    {
+      "text": "cancel dicos reservation make it to kfc",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 7,
+          "endPos": 11
+        },
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 36,
+          "endPos": 38
+        }
+      ]
+    },
+    {
+      "text": "cancel it, make it for four guests at zucca",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 38,
+          "endPos": 42
+        }
+      ]
+    },
+    {
+      "text": "cancel kfc and make for seafood&fruit restaurant&bar reservationat the same time",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 7,
+          "endPos": 9
+        },
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 24,
+          "endPos": 65
+        }
+      ]
+    },
+    {
+      "text": "cancel kfc reservation make it to dicos",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 7,
+          "endPos": 9
+        },
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 34,
+          "endPos": 38
+        }
+      ]
+    },
+    {
+      "text": "cancel kfc's supper",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 7,
+          "endPos": 9
+        }
+      ]
+    },
+    {
+      "text": "cancel my reservation for six at kfc at seven thirty",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 33,
+          "endPos": 35
+        }
+      ]
+    },
+    {
+      "text": "cancel starbucks make it 3w cafe",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 7,
+          "endPos": 15
+        },
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 25,
+          "endPos": 31
+        }
+      ]
+    },
+    {
+      "text": "cancel the reservation at aubergine immediately",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 26,
+          "endPos": 34
+        }
+      ]
+    },
+    {
+      "text": "cancel the reservation for candle cafe",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 27,
+          "endPos": 37
+        }
+      ]
+    },
+    {
+      "text": "cancel the reservation for eight at wong's king 's restaurant at twenty-five to eleven p.m",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 36,
+          "endPos": 46
+        }
+      ]
+    },
+    {
+      "text": "cancel the sylvia's restaurant of harlem reservation for tonight",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 11,
+          "endPos": 39
+        }
+      ]
+    },
+    {
+      "text": "cancel the table at 5pm in dicos's restaurant",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 27,
+          "endPos": 31
+        }
+      ]
+    },
+    {
+      "text": "cancel zucca, make for sushi restaurant same time, 4 guests",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 7,
+          "endPos": 11
+        }
+      ]
+    },
+    {
+      "text": "cancel zucca, make it the red lobster",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 7,
+          "endPos": 11
+        },
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 22,
+          "endPos": 36
+        }
+      ]
+    },
+    {
+      "text": "casa fiesta mexican restaurant nashville tennessee menu",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "change 3w cafe reservation to 5 people",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 7,
+          "endPos": 13
+        }
+      ]
+    },
+    {
+      "text": "change 7:30 pm 's reservation for wong kei from four people to eight",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 34,
+          "endPos": 41
+        }
+      ]
+    },
+    {
+      "text": "change dirt candy reservation to 8pm instead of 7pm",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 7,
+          "endPos": 16
+        }
+      ]
+    },
+    {
+      "text": "change in dining reservation to le gavroche for brunch",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 32,
+          "endPos": 42
+        }
+      ]
+    },
+    {
+      "text": "change kfc reservation to 3pm",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 7,
+          "endPos": 9
+        }
+      ]
+    },
+    {
+      "text": "change my 2 person table at seven tonight to bar cotto",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 45,
+          "endPos": 53
+        }
+      ]
+    },
+    {
+      "text": "change my 7pm veraci pizza reservation to 8pm",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 14,
+          "endPos": 25
+        }
+      ]
+    },
+    {
+      "text": "change place to market restaurant and bar now",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 16,
+          "endPos": 40
+        }
+      ]
+    },
+    {
+      "text": "change reservation at zucca a table for 5 to five twenty",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 22,
+          "endPos": 26
+        }
+      ]
+    },
+    {
+      "text": "change reservation to bloom's restaurant fourteen past five",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 22,
+          "endPos": 39
+        }
+      ]
+    },
+    {
+      "text": "change restaurant to the peak lookout",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 21,
+          "endPos": 36
+        }
+      ]
+    },
+    {
+      "text": "change restaurants on the salumeria rosi parmacotto reservation to sane lam moon",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 26,
+          "endPos": 50
+        },
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 67,
+          "endPos": 79
+        }
+      ]
+    },
+    {
+      "text": "change supper to 4 people at le vallauris",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 29,
+          "endPos": 40
+        }
+      ]
+    },
+    {
+      "text": "change table at peter luger steak house tonight to 4 people on one table",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 16,
+          "endPos": 38
+        }
+      ]
+    },
+    {
+      "text": "change that 5 person reservation from yo! sushi to the woodsman tavern",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 38,
+          "endPos": 46
+        },
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 51,
+          "endPos": 69
+        }
+      ]
+    },
+    {
+      "text": "change that reservation to the chicago pizza pie factory to 4 people",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 27,
+          "endPos": 55
+        }
+      ]
+    },
+    {
+      "text": "change the chef's table at brooklyn fare reservation from 7pm to 8pm next thursday",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 11,
+          "endPos": 39
+        }
+      ]
+    },
+    {
+      "text": "change the location to true food kitchen for my twenty past three reservation",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 23,
+          "endPos": 39
+        }
+      ]
+    },
+    {
+      "text": "change the number of people to 4 for the reservation at dirt candy",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 56,
+          "endPos": 65
+        }
+      ]
+    },
+    {
+      "text": "change the one table reservation for tonight's dinner to five people at king's carriage house",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 72,
+          "endPos": 92
+        }
+      ]
+    },
+    {
+      "text": "change the place to another restaurant called blue hill",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 46,
+          "endPos": 54
+        }
+      ]
+    },
+    {
+      "text": "change the reservation at gourmet burger kitchen from 7 people to eight people",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 26,
+          "endPos": 47
+        }
+      ]
+    },
+    {
+      "text": "change the supper time at grodzinski bakery",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 26,
+          "endPos": 42
+        }
+      ]
+    },
+    {
+      "text": "change the time of the reservation at second avenue deli tonight to 7:00 from 6:25",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 38,
+          "endPos": 55
+        }
+      ]
+    },
+    {
+      "text": "change the twenty-five to nine dinner reservation to lindy's",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 53,
+          "endPos": 59
+        }
+      ]
+    },
+    {
+      "text": "change time of dinner peter luger steak house a quarter past six",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 22,
+          "endPos": 44
+        }
+      ]
+    },
+    {
+      "text": "change to 5 person table at noon today at lartusi",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 42,
+          "endPos": 48
+        }
+      ]
+    },
+    {
+      "text": "change to table of 6 tonight half past five at bitterroot",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 47,
+          "endPos": 56
+        }
+      ]
+    },
+    {
+      "text": "change tonight 's brunch reservation to la trompette",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 40,
+          "endPos": 51
+        }
+      ]
+    },
+    {
+      "text": "check and see if my reservation at sylvia's restaurant of harlem is for 7 tonight",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 35,
+          "endPos": 63
+        }
+      ]
+    },
+    {
+      "text": "check if booking at kau kee restaurant 's, 7pm tonight was successfully done.",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 20,
+          "endPos": 37
+        }
+      ]
+    },
+    {
+      "text": "check on the 7 reservation for brasserie vacherin, sutton",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 31,
+          "endPos": 56
+        }
+      ]
+    },
+    {
+      "text": "check reservation time for brasserie julien tomorrow",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 27,
+          "endPos": 42
+        }
+      ]
+    },
+    {
+      "text": "check reservation time for hawker centre",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 27,
+          "endPos": 39
+        }
+      ]
+    },
+    {
+      "text": "check to see if my reservation for 7 tonight is a kennedy fried chicken",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 50,
+          "endPos": 70
+        }
+      ]
+    },
+    {
+      "text": "clear lake south dakota community center address",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "cocktail menu for macaroni grill",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "cocktail menu for poolside",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "confirm the reservation at sushi bar in wuxi",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 27,
+          "endPos": 35
+        }
+      ]
+    },
+    {
+      "text": "confirm the reservation with happy bar",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 29,
+          "endPos": 37
+        }
+      ]
+    },
+    {
+      "text": "confirm today 5pm reservation at dayu hot pot",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 33,
+          "endPos": 44
+        }
+      ]
+    },
+    {
+      "text": "connect me with the sorrento's on palm bay rd",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "contact kennedy fried chicken and increase the number of my party to seven",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 8,
+          "endPos": 28
+        }
+      ]
+    },
+    {
+      "text": "contact number for luton christian fellowship",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "contact stoneburner and let them know i need the space for 6 people instead of 5",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 8,
+          "endPos": 18
+        }
+      ]
+    },
+    {
+      "text": "costcos hours",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "could you please create a 4 stars review for little garden in redmond",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "cricket tampa florida store hours",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "david barton gym hours in bellevue",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "delay reservation at jahn's to 7 o'clock",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 21,
+          "endPos": 26
+        }
+      ]
+    },
+    {
+      "text": "delete 7:00 p.m. reservation tonight at townsend 's",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 40,
+          "endPos": 47
+        }
+      ]
+    },
+    {
+      "text": "delete kedai makan lunch reservation now",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 7,
+          "endPos": 17
+        }
+      ]
+    },
+    {
+      "text": "delete my reservation for ten at shiro’s",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 33,
+          "endPos": 39
+        }
+      ]
+    },
+    {
+      "text": "delete that sane lam moon reservation for 5 that was six ten",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 12,
+          "endPos": 24
+        }
+      ]
+    },
+    {
+      "text": "delete the cranks reservation.",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 11,
+          "endPos": 16
+        }
+      ]
+    },
+    {
+      "text": "delete the plans for ba bar at seven",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 21,
+          "endPos": 26
+        }
+      ]
+    },
+    {
+      "text": "delete the reservation for the japan house.bar tonight",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 27,
+          "endPos": 45
+        }
+      ]
+    },
+    {
+      "text": "delete the table for two at tsui wah restaurant at a quarter to nine tonight",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 28,
+          "endPos": 46
+        }
+      ]
+    },
+    {
+      "text": "dial the nearest autozone",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "dial the number for dominos in bayside",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "dial the number for old navy",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "did i make a reservation at veniero's at five forty",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 28,
+          "endPos": 36
+        }
+      ]
+    },
+    {
+      "text": "did the candle cafe reservation at 7:00 p.m. tonight go through",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 8,
+          "endPos": 18
+        }
+      ]
+    },
+    {
+      "text": "did you a table at le gavroche at seven p. m. tonight",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 19,
+          "endPos": 29
+        }
+      ]
+    },
+    {
+      "text": "did you book my table at rolfe's chop house 6:00 p.m.",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 25,
+          "endPos": 42
+        }
+      ]
+    },
+    {
+      "text": "did you make a seven p. m. reservation at munson diner",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 42,
+          "endPos": 53
+        }
+      ]
+    },
+    {
+      "text": "did you make my arethusa al tavolo reservation eight o'clock",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 16,
+          "endPos": 33
+        }
+      ]
+    },
+    {
+      "text": "dinner at café boulud postpone til 8",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 10,
+          "endPos": 20
+        }
+      ]
+    },
+    {
+      "text": "directions to shopsins",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 14,
+          "endPos": 21
+        }
+      ]
+    },
+    {
+      "text": "discover market restaurant and bar reservation for 7:00 p.m. tonight",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 9,
+          "endPos": 33
+        }
+      ]
+    },
+    {
+      "text": "display cocktail menu for olive garden",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "display details of my reservation for sushi bar",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 38,
+          "endPos": 46
+        }
+      ]
+    },
+    {
+      "text": "display location of shopsins",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 20,
+          "endPos": 27
+        }
+      ]
+    },
+    {
+      "text": "display menu for srivichai thai restaurant",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "display the dicos's address on map",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 12,
+          "endPos": 16
+        }
+      ]
+    },
+    {
+      "text": "display the time details of the reservation for sage thai resturant in china town",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 48,
+          "endPos": 56
+        }
+      ]
+    },
+    {
+      "text": "distance between my home to tesco",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "do confirm if we have a booking at 7pm tonight in l'auberge chez francois",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 50,
+          "endPos": 72
+        }
+      ]
+    },
+    {
+      "text": "do find if we have a reservation at 7pm tonight in market restaurant and bar",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 51,
+          "endPos": 75
+        }
+      ]
+    },
+    {
+      "text": "do i have a 7pm reservation at wapping hydraulic power station tonight",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 31,
+          "endPos": 61
+        }
+      ]
+    },
+    {
+      "text": "do i have a reservation at salumeria rosi parmacotto tonight",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 27,
+          "endPos": 51
+        }
+      ]
+    },
+    {
+      "text": "do i have a serendipity 3 dinner tonight",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 12,
+          "endPos": 24
+        }
+      ]
+    },
+    {
+      "text": "do i have a table at sushi yasuda at seven p. m.",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 21,
+          "endPos": 32
+        }
+      ]
+    },
+    {
+      "text": "do i have a table reserved at jumbo kingdom this evening",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 30,
+          "endPos": 42
+        }
+      ]
+    },
+    {
+      "text": "do i have a table tomorrow morning at piccolo cafe for breakfast",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 38,
+          "endPos": 49
+        }
+      ]
+    },
+    {
+      "text": "do i have time to cancel the reservation at le vallauris for tonight",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 44,
+          "endPos": 55
+        }
+      ]
+    },
+    {
+      "text": "do me a favor and ink that reservation for 4 at the nosh bar",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 48,
+          "endPos": 59
+        }
+      ]
+    },
+    {
+      "text": "do you have the menu for martoranas in atlantic city harrahs",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "do you have the menu for wildfire restaurant in oak brook",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "do you have the phone number for fresh grocer",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "domino s pizza in walkertown menu",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "don't book this paseo reservation, sorry",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 16,
+          "endPos": 20
+        }
+      ]
+    },
+    {
+      "text": "driving directions for vetri cucina",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 23,
+          "endPos": 34
+        }
+      ]
+    },
+    {
+      "text": "drop 7:00 p.m. reservation at ruth's chris steak house 's",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 30,
+          "endPos": 53
+        }
+      ]
+    },
+    {
+      "text": "eat at veniero's instead of serendipity 3 on friday for my eight person reservation.",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 7,
+          "endPos": 15
+        },
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 28,
+          "endPos": 40
+        }
+      ]
+    },
+    {
+      "text": "edit my dinner reservation to 2 people on chirstmas eve at tribeca grill",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 59,
+          "endPos": 71
+        }
+      ]
+    },
+    {
+      "text": "edit reservation for chez billy sud to three people",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 21,
+          "endPos": 34
+        }
+      ]
+    },
+    {
+      "text": "eight o'clock rather than 7 for cranks lunch",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 32,
+          "endPos": 37
+        }
+      ]
+    },
+    {
+      "text": "el mercado latino pike place market hours",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "email me the time of the reservations to vetri cucina in palo alto",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 41,
+          "endPos": 52
+        }
+      ]
+    },
+    {
+      "text": "end reservation request at lombardi's pizza 7 o'clock at piccadilly",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 27,
+          "endPos": 42
+        }
+      ]
+    },
+    {
+      "text": "fall city roadhouse happy hour menu",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "finalize the reservation for tonight for ten people at harold black",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 55,
+          "endPos": 66
+        }
+      ]
+    },
+    {
+      "text": "find 7:00 p.m. reservation for korilla bbq 's tonight",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 31,
+          "endPos": 41
+        }
+      ]
+    },
+    {
+      "text": "find a menu for laplace frostop",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "find address for atlas metal denver colorado",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "find address for larry's animal clinic in portland oregon",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "find applebees kids menu",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "find atera restaurant in los angeles",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 5,
+          "endPos": 9
+        }
+      ]
+    },
+    {
+      "text": "find caravaggio reservation",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 5,
+          "endPos": 14
+        }
+      ]
+    },
+    {
+      "text": "find dominos pizza phone number in fergus falls minnesota",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "find dorrian's red hand restaurant dining reservation",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 5,
+          "endPos": 33
+        }
+      ]
+    },
+    {
+      "text": "find home depot that takes reservation",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "find isle of capri in black hawk colorado phone number",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "find kids meals at chipotle",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "find lounge clubs",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "find lowes store",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "find my reservation at renaissance san diego",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 23,
+          "endPos": 43
+        }
+      ]
+    },
+    {
+      "text": "find my reservation for 7pm at el gaucho",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 31,
+          "endPos": 39
+        }
+      ]
+    },
+    {
+      "text": "find my reservation i made for 1770 house tonight at 7",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 31,
+          "endPos": 40
+        }
+      ]
+    },
+    {
+      "text": "find number for pizza pro in merkel texas",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "find number for subway on 26hth amp sycamore in sioux falls",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "find phone number for albany medical center hospital",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "find phone number for king's things in swedesboro new jersey",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "find red lobster kids menu",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "find rio city cafe in old sacramento",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "find telephone number for bowling green state university alumni",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "find the address for microsoft building one twenty two",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "find the address for the los angeles fashion district in los angeles california",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "find the address for tony kent water street princeton indiana",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "find the address to chaat n roll",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "find the kids menu for tgi friday s",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "find the menu for olive garden",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "find the nearest lego store",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "find the nearest westminster library",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "find the number for king city chinese",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "find the number for the weighbridge vandals rugby club",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "find the number to cricket on south avenue",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "find the number to pieratts lexington kentucky",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "find the number to steven hood in colorado springs",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "find the phone number to higher ground in springfield missouri",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "find the reservation at kfc for me",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 24,
+          "endPos": 26
+        }
+      ]
+    },
+    {
+      "text": "find the telephone number for deutsche bank london",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "find wendy's restaurant menu",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "find wing wah 's reservation for tonight at 7:00 p.m.",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 5,
+          "endPos": 12
+        }
+      ]
+    },
+    {
+      "text": "first tech credit union redmond address",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "for now i just know how to get the restaurant name is wuxi restaurant",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 54,
+          "endPos": 68
+        }
+      ]
+    },
+    {
+      "text": "get all my reservation pulled up and change the time for my 7 person party at yung kee.",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 78,
+          "endPos": 85
+        }
+      ]
+    },
+    {
+      "text": "get phone number for george wall ford dealer",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "get that sane lam moon reservation on the books.",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 9,
+          "endPos": 21
+        }
+      ]
+    },
+    {
+      "text": "give 5 stars for village square in redmond on bing",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "give sushi me in renton 0 stars",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "go ahead and complete the reservation for tonight at 7 for two people at grodzinski bakery",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 73,
+          "endPos": 89
+        }
+      ]
+    },
+    {
+      "text": "go ahead and confirm the booking of my table for ten tonight at st. john",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 64,
+          "endPos": 71
+        }
+      ]
+    },
+    {
+      "text": "go ahead and make the reservation for 9 o'clock at 54 below as completed please.",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 51,
+          "endPos": 58
+        }
+      ]
+    },
+    {
+      "text": "go to my dinner reservation and change the locale to fairwood",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 53,
+          "endPos": 60
+        }
+      ]
+    },
+    {
+      "text": "gps sage thai restaurant",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 4,
+          "endPos": 12
+        }
+      ]
+    },
+    {
+      "text": "hair buzz on fifty second and jefferson store hours",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "happy hour menu for daniels pub",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "happy hour menu for joe's",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "have genna's pizza send me a chicken parm to 1234 carltones drive viera fl 32940",
+      "intent": "OrderFood",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 5,
+          "endPos": 17
+        },
+        {
+          "entity": "Food",
+          "startPos": 29,
+          "endPos": 40
+        },
+        {
+          "entity": "StreetNumber",
+          "startPos": 45,
+          "endPos": 48
+        },
+        {
+          "entity": "Address",
+          "startPos": 45,
+          "endPos": 79
+        },
+        {
+          "entity": "StreetName",
+          "startPos": 50,
+          "endPos": 64
+        },
+        {
+          "entity": "City",
+          "startPos": 66,
+          "endPos": 70
+        },
+        {
+          "entity": "State",
+          "startPos": 72,
+          "endPos": 73
+        },
+        {
+          "entity": "ZipCode",
+          "startPos": 75,
+          "endPos": 79
+        }
+      ]
+    },
+    {
+      "text": "have my revervation for kfc brought forth",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 24,
+          "endPos": 26
+        }
+      ]
+    },
+    {
+      "text": "have the manager at masa remove the reservation set for 7:00pm",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 20,
+          "endPos": 23
+        }
+      ]
+    },
+    {
+      "text": "have the reservation of zucca removed",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 24,
+          "endPos": 28
+        }
+      ]
+    },
+    {
+      "text": "help me find my reservation for l'entrecôte",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 32,
+          "endPos": 42
+        }
+      ]
+    },
+    {
+      "text": "help me find my toscana reservation",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 16,
+          "endPos": 22
+        }
+      ]
+    },
+    {
+      "text": "help me find the reservation at aquagrill",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 32,
+          "endPos": 40
+        }
+      ]
+    },
+    {
+      "text": "help me with the location of gourmet burger kitchen",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 29,
+          "endPos": 50
+        }
+      ]
+    },
+    {
+      "text": "help me with the time for the reservation at halls chophouse",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 45,
+          "endPos": 59
+        }
+      ]
+    },
+    {
+      "text": "help me with the time of the reservation at beacon hill",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 44,
+          "endPos": 54
+        }
+      ]
+    },
+    {
+      "text": "hold off on finalizing the 7 o'clock the woodsman tavern table for eight",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 37,
+          "endPos": 55
+        }
+      ]
+    },
+    {
+      "text": "how can i change the nice restaurant on the seven people reservation to the woodsman tavern restaurant",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 72,
+          "endPos": 90
+        }
+      ]
+    },
+    {
+      "text": "how expensive it is for a ticket from universal studio",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how far am i away from park view",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how far am i from the empire state building",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how far am i to empire state",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how far are we from albuquerque international airport",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how far are we from universal studios florida",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how far away am i from the space needle",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how far away is chili's from where i am",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how far away is dillards department store from here",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how far away is five guys from my current location",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how far away is it to bay sixty six",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how far away is tesco cowbridge road",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how far away is the wales national swimming pool in swansea",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how far fiddleheads is from here",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how far is disney world paris",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how far is fraunces tavern located from me",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 11,
+          "endPos": 25
+        }
+      ]
+    },
+    {
+      "text": "how far is it from here to starbucks",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how far is it to canterbury fire station",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how far is it to coconuts cafe from here",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how far is it to columbia mall in maryland",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how far is it to kings college wimbledon",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how far is it to manchester airport from my location",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how far is it to walk to crystal palace gardens",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how far is lifestyle fitness gym darlington",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how far is mcdonalds from my home",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how far is new delhi railway station from here",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how far is north carolina a and t from my location",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how far is rite aid from acme",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how far is sea world san antonio from me",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how far is the closest starbucks from here",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how far is the emerald city gym",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how far is the home depot from lowe s",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how far is the nearest subway",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how far is the northgate mall from here",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how far to ikea",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how far to mom and dad's",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how far to the nearest krispy kreme",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how far to walk to walmart",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how is la fitness in kirkland rated accoriding to yelp",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how is the famous sushi at seattle downtown",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how late is food lion on morganton open",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how late is kroger open until",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how late is sherman williams in leesburg florida open till",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how late is walmart in exeter open",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how long is office depot open",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how many miles is it to colchester railway station",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how many stars does beijing o'chef have in google",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how many stars does boiling point have",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how many stars does burger king have",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how many stars does denny s have",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how many stars does duke s chowder house have",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how many stars does groupies have",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how many stars does hobee s have",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how many stars does hobee s restaurant have",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how many stars does hoby s restaurant have",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how many stars does i love sushi have",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how many stars does jj have",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how many stars does machiko s have",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how many stars does mashiko have",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how many stars does mashiko restaurant have",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how many stars does mcdonald s have",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how many stars does nishino have",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how many stars does olive garden have",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how many stars does subway have",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how many stars does thai ginger have",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how many stars does trophy cakes have",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how many stars for the restaurant in space needle",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how much is the panda express",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how much is the pho restaurant in redmond town center",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how much is the redmond bar & grill",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how much it will cost for a broadway show ticket",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how to change the shiro’s reservation to zuma",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 18,
+          "endPos": 24
+        },
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 41,
+          "endPos": 44
+        }
+      ]
+    },
+    {
+      "text": "i can't locate alice restaurant help me",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 15,
+          "endPos": 30
+        }
+      ]
+    },
+    {
+      "text": "i don’t have time so forget about the kfc reservation",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 38,
+          "endPos": 40
+        }
+      ]
+    },
+    {
+      "text": "i don't need a table at kuo yuan",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 24,
+          "endPos": 31
+        }
+      ]
+    },
+    {
+      "text": "i don't think this will work for me so stop the two person el gaucho table.",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 59,
+          "endPos": 67
+        }
+      ]
+    },
+    {
+      "text": "i for sure want to eat at true food kitchen on 78th street so go ahead and confirm.",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 26,
+          "endPos": 42
+        }
+      ]
+    },
+    {
+      "text": "i have some changes make to my 11:20 peter luger steak house reservation.",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 37,
+          "endPos": 59
+        }
+      ]
+    },
+    {
+      "text": "i have to cancel my reservation at the chicago pizza pie factory for tonight",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 35,
+          "endPos": 63
+        }
+      ]
+    },
+    {
+      "text": "i have to delay the reservation of dicos in 300 112th ave se",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 35,
+          "endPos": 39
+        }
+      ]
+    },
+    {
+      "text": "i hope you can reserve a restaurant at collage street",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 39,
+          "endPos": 52
+        }
+      ]
+    },
+    {
+      "text": "i hope you can tell me the time of the reservation in the shanghai restaurant",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 58,
+          "endPos": 76
+        }
+      ]
+    },
+    {
+      "text": "i made a reservation for 5 at chef's table at brooklyn fare and now cancel it.",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 30,
+          "endPos": 58
+        }
+      ]
+    },
+    {
+      "text": "i need 7 o'clock 's reservation to be changed to charles' southern style kitchen",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 49,
+          "endPos": 79
+        }
+      ]
+    },
+    {
+      "text": "i need a menu for ihop",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i need a number for verizon wireless",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i need a phone number for virgin media support",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i need a reservation for star seafood floating restaurant",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 25,
+          "endPos": 56
+        }
+      ]
+    },
+    {
+      "text": "i need a table for seven at tom aikens in shanghai",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 28,
+          "endPos": 37
+        }
+      ]
+    },
+    {
+      "text": "i need reservations at zucca",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 23,
+          "endPos": 27
+        }
+      ]
+    },
+    {
+      "text": "i need the 4-star restaurant changed to yauatcha instead of chef's table at brooklyn fare for that reservation",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 40,
+          "endPos": 47
+        },
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 60,
+          "endPos": 88
+        }
+      ]
+    },
+    {
+      "text": "i need the address for best buy bellevue",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i need the address for the nearest suntrust bank",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i need the address for walmart",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i need the directions of the metoo restaurant",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 29,
+          "endPos": 44
+        }
+      ]
+    },
+    {
+      "text": "i need the directions to veeraswamy",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 25,
+          "endPos": 34
+        }
+      ]
+    },
+    {
+      "text": "i need the menu for chipotle grill",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i need the number for steak n hoagie stallings north carolina",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i need the number to mr hooks in philadelphia",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i need the phone number for the comfort inn on cypress parkway in houston texas",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i need the phone number to somers elementary school kenosha wisconsin",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i need the place changed to louisxv reataurant now",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 28,
+          "endPos": 45
+        }
+      ]
+    },
+    {
+      "text": "i need the time for the reservation at the nosh bar",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 39,
+          "endPos": 50
+        }
+      ]
+    },
+    {
+      "text": "i need the time of the mak's noodle reservation changed to 7:30",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 23,
+          "endPos": 34
+        }
+      ]
+    },
+    {
+      "text": "i need to reserve the restaurant named guangzhou restaurant",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 39,
+          "endPos": 58
+        }
+      ]
+    },
+    {
+      "text": "i need you to tell me the time of reservation at zhangliang reataurant",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 49,
+          "endPos": 69
+        }
+      ]
+    },
+    {
+      "text": "i will call delicious rilla later if book this reservation",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 22,
+          "endPos": 26
+        }
+      ]
+    },
+    {
+      "text": "i will go to the shanghai restaurant this afternoon to confirm the reservation",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 17,
+          "endPos": 35
+        }
+      ]
+    },
+    {
+      "text": "i will not take part in the parting this afternoon in jucie's restaurant because i have no time",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 54,
+          "endPos": 71
+        }
+      ]
+    },
+    {
+      "text": "i will now have a dining party of ten people so make the changes to my gabriel kreuther reservation.",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 71,
+          "endPos": 86
+        }
+      ]
+    },
+    {
+      "text": "i would like 6:30 's reservation to be at marc forgione now instead of jack’s place",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 42,
+          "endPos": 54
+        },
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 71,
+          "endPos": 82
+        }
+      ]
+    },
+    {
+      "text": "i would like reservations at koi in central street",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 29,
+          "endPos": 31
+        }
+      ]
+    },
+    {
+      "text": "i'd like an order of cheesesteak from joe's pizza sent to 3010 bridge road, new york new york, 10020",
+      "intent": "OrderFood",
+      "entities": [
+        {
+          "entity": "Food",
+          "startPos": 21,
+          "endPos": 31
+        },
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 38,
+          "endPos": 48
+        },
+        {
+          "entity": "StreetNumber",
+          "startPos": 58,
+          "endPos": 61
+        },
+        {
+          "entity": "Address",
+          "startPos": 58,
+          "endPos": 99
+        },
+        {
+          "entity": "StreetName",
+          "startPos": 63,
+          "endPos": 73
+        },
+        {
+          "entity": "City",
+          "startPos": 76,
+          "endPos": 83
+        },
+        {
+          "entity": "State",
+          "startPos": 85,
+          "endPos": 92
+        },
+        {
+          "entity": "ZipCode",
+          "startPos": 95,
+          "endPos": 99
+        }
+      ]
+    },
+    {
+      "text": "i'd like an order of disco fries sent to 14 seventh ave, new york new york, 10001",
+      "intent": "OrderFood",
+      "entities": [
+        {
+          "entity": "Food",
+          "startPos": 21,
+          "endPos": 31
+        },
+        {
+          "entity": "StreetNumber",
+          "startPos": 41,
+          "endPos": 42
+        },
+        {
+          "entity": "Address",
+          "startPos": 41,
+          "endPos": 80
+        },
+        {
+          "entity": "StreetName",
+          "startPos": 44,
+          "endPos": 54
+        },
+        {
+          "entity": "City",
+          "startPos": 57,
+          "endPos": 64
+        },
+        {
+          "entity": "State",
+          "startPos": 66,
+          "endPos": 73
+        },
+        {
+          "entity": "ZipCode",
+          "startPos": 76,
+          "endPos": 80
+        }
+      ]
+    },
+    {
+      "text": "i'd like to have one cheese pizza from joe's pizza delivered to 21 jump street, melbourne fl 32940",
+      "intent": "OrderFood",
+      "entities": [
+        {
+          "entity": "Food",
+          "startPos": 21,
+          "endPos": 32
+        },
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 39,
+          "endPos": 49
+        },
+        {
+          "entity": "StreetNumber",
+          "startPos": 64,
+          "endPos": 65
+        },
+        {
+          "entity": "Address",
+          "startPos": 64,
+          "endPos": 97
+        },
+        {
+          "entity": "StreetName",
+          "startPos": 67,
+          "endPos": 77
+        },
+        {
+          "entity": "City",
+          "startPos": 80,
+          "endPos": 88
+        },
+        {
+          "entity": "State",
+          "startPos": 90,
+          "endPos": 91
+        },
+        {
+          "entity": "ZipCode",
+          "startPos": 93,
+          "endPos": 97
+        }
+      ]
+    },
+    {
+      "text": "i'd like to know if i reserved a table for valentine's at crystal jade",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 58,
+          "endPos": 69
+        }
+      ]
+    },
+    {
+      "text": "i'd like to make my reservation for tonight for sardi's instead of rolfe's chop house change it for me?",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 48,
+          "endPos": 54
+        },
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 67,
+          "endPos": 84
+        }
+      ]
+    },
+    {
+      "text": "i'd like to order a cheese pizza from joe's pizza and have it delivered to 212 main street, lincoln ne, 68501",
+      "intent": "OrderFood",
+      "entities": [
+        {
+          "entity": "Food",
+          "startPos": 20,
+          "endPos": 31
+        },
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 38,
+          "endPos": 48
+        },
+        {
+          "entity": "StreetNumber",
+          "startPos": 75,
+          "endPos": 77
+        },
+        {
+          "entity": "Address",
+          "startPos": 75,
+          "endPos": 108
+        },
+        {
+          "entity": "StreetName",
+          "startPos": 79,
+          "endPos": 89
+        },
+        {
+          "entity": "City",
+          "startPos": 92,
+          "endPos": 98
+        },
+        {
+          "entity": "State",
+          "startPos": 100,
+          "endPos": 101
+        },
+        {
+          "entity": "ZipCode",
+          "startPos": 104,
+          "endPos": 108
+        }
+      ]
+    },
+    {
+      "text": "i'd like to pickup a general tsao's chicken from firehouse subs",
+      "intent": "OrderFood",
+      "entities": [
+        {
+          "entity": "Food",
+          "startPos": 21,
+          "endPos": 42
+        },
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 49,
+          "endPos": 62
+        }
+      ]
+    },
+    {
+      "text": "i'd like you to go ahead and make this reservation for rich table on richard road tonight yes.",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 55,
+          "endPos": 64
+        }
+      ]
+    },
+    {
+      "text": "if i have a reservation at cipriani s.a. for 7 tonight",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 27,
+          "endPos": 39
+        }
+      ]
+    },
+    {
+      "text": "if you can change my reservation for four at the peak lookout tonight to ray's candy store instead?",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 45,
+          "endPos": 60
+        },
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 73,
+          "endPos": 89
+        }
+      ]
+    },
+    {
+      "text": "if you could have hop bo's send me green curry at 12 caviston road, detroit michigan, 34523",
+      "intent": "OrderFood",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 18,
+          "endPos": 25
+        },
+        {
+          "entity": "Food",
+          "startPos": 35,
+          "endPos": 45
+        },
+        {
+          "entity": "StreetNumber",
+          "startPos": 50,
+          "endPos": 51
+        },
+        {
+          "entity": "Address",
+          "startPos": 50,
+          "endPos": 90
+        },
+        {
+          "entity": "StreetName",
+          "startPos": 53,
+          "endPos": 65
+        },
+        {
+          "entity": "City",
+          "startPos": 68,
+          "endPos": 74
+        },
+        {
+          "entity": "State",
+          "startPos": 76,
+          "endPos": 83
+        },
+        {
+          "entity": "ZipCode",
+          "startPos": 86,
+          "endPos": 90
+        }
+      ]
+    },
+    {
+      "text": "ikea in charlotte north carolina hours",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "increase the number of people on my salumeria rosi parmacotto reservation to four",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 36,
+          "endPos": 60
+        }
+      ]
+    },
+    {
+      "text": "is chutney s indian restaurant in bellevue expensive",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "is chutneys restaurant in bellevue expensive",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "is it possible to contact h&h bagels for a possible reservation modification for lunch",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 26,
+          "endPos": 35
+        }
+      ]
+    },
+    {
+      "text": "is izumi expensive",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "is rules close by me",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 3,
+          "endPos": 7
+        }
+      ]
+    },
+    {
+      "text": "is the reservation at bitterroot completed",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 22,
+          "endPos": 31
+        }
+      ]
+    },
+    {
+      "text": "is the reservation for 7:00 at gourmet burger kitchen done",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 31,
+          "endPos": 52
+        }
+      ]
+    },
+    {
+      "text": "is there any pizza house near here",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i've got to cancel my table for tonight at the popular restaurant nandos",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 66,
+          "endPos": 71
+        }
+      ]
+    },
+    {
+      "text": "just don't worry about booking the a quarter to nine p.m. reservation at ba bar for now.",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 73,
+          "endPos": 78
+        }
+      ]
+    },
+    {
+      "text": "keep the same day on my gourmet burger kitchen reservation but postpone it.",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 24,
+          "endPos": 45
+        }
+      ]
+    },
+    {
+      "text": "kfc lunch is off, cancel it",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 0,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "kid menu for olive garden",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "kill the zuma reservation tomorrow at nine o'clock p.m.",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 9,
+          "endPos": 12
+        }
+      ]
+    },
+    {
+      "text": "kindly cancel the table reserved for 7 at gaddi's at seven tonight",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 42,
+          "endPos": 48
+        }
+      ]
+    },
+    {
+      "text": "kindly check if we have a booking at ten to nine tonight in aberdeen angus steak houses",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 60,
+          "endPos": 86
+        }
+      ]
+    },
+    {
+      "text": "kindly confirm if we already have done a reservation at sushi house unico fifteen to seven tonight",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 56,
+          "endPos": 72
+        }
+      ]
+    },
+    {
+      "text": "kindly see if we have a table reserved at rainbow room 9:30 p.m. tonight",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 42,
+          "endPos": 53
+        }
+      ]
+    },
+    {
+      "text": "know if already have a reservation at bridge cafe at 8 tonight",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 38,
+          "endPos": 48
+        }
+      ]
+    },
+    {
+      "text": "know if we have a reservation at 7pm tonight at fairwood",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 48,
+          "endPos": 55
+        }
+      ]
+    },
+    {
+      "text": "la fitness woodhaven saturday hours",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "la nails johnson city tennessee s phone number",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "let me know if i had a time at munson diner tonight",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 31,
+          "endPos": 42
+        }
+      ]
+    },
+    {
+      "text": "let me see the info for that reservation that i placed at l'auberge chez francois",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 58,
+          "endPos": 80
+        }
+      ]
+    },
+    {
+      "text": "let zucca knows that change my reservation from 3:15 to 3:30 p.m. on thursday",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 4,
+          "endPos": 8
+        }
+      ]
+    },
+    {
+      "text": "let's confirm my eight person reservation for the halal guys",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 46,
+          "endPos": 59
+        }
+      ]
+    },
+    {
+      "text": "let's give 5 stars to chickfla on website a and website b",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "let's just stop this whole process and close out the reservation for eight at 1770 house",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 78,
+          "endPos": 87
+        }
+      ]
+    },
+    {
+      "text": "let's rate microsoft visitor center 5 stars on google map",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "location of the chicago pizza pie factory restaurant",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 12,
+          "endPos": 40
+        }
+      ]
+    },
+    {
+      "text": "location of veniero's",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 12,
+          "endPos": 20
+        }
+      ]
+    },
+    {
+      "text": "lynnwood city hall address",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "make a reservation at the closest the original soup man",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 34,
+          "endPos": 54
+        }
+      ]
+    },
+    {
+      "text": "make a reservation for 7 at china grill management",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 28,
+          "endPos": 49
+        }
+      ]
+    },
+    {
+      "text": "make a reservation for four people three forty-five at mo gridder's",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 55,
+          "endPos": 66
+        }
+      ]
+    },
+    {
+      "text": "make a reservation for lawry's",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 23,
+          "endPos": 29
+        }
+      ]
+    },
+    {
+      "text": "make a reservation for me at star seafood floating restaurant",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 29,
+          "endPos": 60
+        }
+      ]
+    },
+    {
+      "text": "make a reservation for two at nine thirty p m at gaddi's",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 49,
+          "endPos": 55
+        }
+      ]
+    },
+    {
+      "text": "make dinner at zucca for 8, not 7 people",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 15,
+          "endPos": 19
+        }
+      ]
+    },
+    {
+      "text": "make for seafood&fruit restaurant&bar reservation",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 9,
+          "endPos": 36
+        }
+      ]
+    },
+    {
+      "text": "make me a reservation at korilla bbq",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 25,
+          "endPos": 35
+        }
+      ]
+    },
+    {
+      "text": "make reservation at corton for next month",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 20,
+          "endPos": 25
+        }
+      ]
+    },
+    {
+      "text": "make reservation at gourmet burger kitchen for dinner 9 o'clock",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 20,
+          "endPos": 41
+        }
+      ]
+    },
+    {
+      "text": "make reservation at st. john for breakfast",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 20,
+          "endPos": 27
+        }
+      ]
+    },
+    {
+      "text": "make reservation at the cube, the 5-star restaurant",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 20,
+          "endPos": 27
+        }
+      ]
+    },
+    {
+      "text": "make reservations at mak's noodle on manamunda",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 21,
+          "endPos": 32
+        }
+      ]
+    },
+    {
+      "text": "make reservations at rainbow room in rowes bay queensland",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 21,
+          "endPos": 32
+        }
+      ]
+    },
+    {
+      "text": "make reservations at the la grenouille",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 25,
+          "endPos": 37
+        }
+      ]
+    },
+    {
+      "text": "make reservations for 6 on fri at ten to five at harold black",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 49,
+          "endPos": 60
+        }
+      ]
+    },
+    {
+      "text": "make reservations for crystal jade in 18th avenue ne",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 22,
+          "endPos": 33
+        }
+      ]
+    },
+    {
+      "text": "make reservations for two at genki sushi",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 29,
+          "endPos": 39
+        }
+      ]
+    },
+    {
+      "text": "make reservations to benihana",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 21,
+          "endPos": 28
+        }
+      ]
+    },
+    {
+      "text": "make reservations to jack’s place for supper",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 21,
+          "endPos": 32
+        }
+      ]
+    },
+    {
+      "text": "make sure my lunch reservation for stars bbq is booked",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 35,
+          "endPos": 43
+        }
+      ]
+    },
+    {
+      "text": "make the reservation at collage street",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 24,
+          "endPos": 37
+        }
+      ]
+    },
+    {
+      "text": "make the reservation at victorian restaurant for 5 instead of 7",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 24,
+          "endPos": 43
+        }
+      ]
+    },
+    {
+      "text": "make the reservation tonight for dirt candy instead of chi spacca",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 33,
+          "endPos": 42
+        },
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 55,
+          "endPos": 64
+        }
+      ]
+    },
+    {
+      "text": "menu for fish house",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "menu for pino's pizzeria",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "menu for tarasco's tacos and wings cartersville",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "need a phone number for o reilly auto parts",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "need the number to cricket on wilson road",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "nine to dine at rolfe's chop house not wong kei 7pm",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 16,
+          "endPos": 33
+        },
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 39,
+          "endPos": 46
+        }
+      ]
+    },
+    {
+      "text": "note change to aberdeen angus steak houses for lunch not the peak lookout",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 15,
+          "endPos": 41
+        },
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 57,
+          "endPos": 72
+        }
+      ]
+    },
+    {
+      "text": "now we will be going to sofra note change in place",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 24,
+          "endPos": 28
+        }
+      ]
+    },
+    {
+      "text": "opening hours sainsbury s dartford",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "out if we have a table reserved at corton restaurant, 7:00 p.m tonight",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 35,
+          "endPos": 40
+        }
+      ]
+    },
+    {
+      "text": "outback steakhouse restaurant menu",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "pets at home milton keynes opening hours",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "phone number denver grand hyatt hotel",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "phone number for indiana bmv in schererville indiana",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "phone number for kroger on beltline in northgate",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "phone number for sport clips in friendly shopping center",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "phone number for strombolis in windermere florida",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "phone number for the ice cream shop",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "place a call to walmart on walton way",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "planet fitness hours on belmont and pulaski",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "please go ahead and rate i love sushi a 5 stars on yelp.com",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "portland community college sylvania campus address",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "portland oregon costco hours",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "post my rating for american girl place for 5",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "post my rating for cvs for 5",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "post my rating for holiday inn for 4 stars",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "postone till 8 breakfast at ruth's chris steak house",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 28,
+          "endPos": 51
+        }
+      ]
+    },
+    {
+      "text": "postpone le gavroche reservation to 9 o'clock for tonight",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 9,
+          "endPos": 19
+        }
+      ]
+    },
+    {
+      "text": "postpone the 3-star restaurant zucca reservation by one hour to twelve thirty",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 31,
+          "endPos": 35
+        }
+      ]
+    },
+    {
+      "text": "postpone the jungsik's to 8",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 13,
+          "endPos": 21
+        }
+      ]
+    },
+    {
+      "text": "postpone the maison novelli reservation to half past seven",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 13,
+          "endPos": 26
+        }
+      ]
+    },
+    {
+      "text": "price ranges on five guys restaurant in alcoa tn",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "provide me the time of the reservation at chef's table at brooklyn fare",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 42,
+          "endPos": 70
+        }
+      ]
+    },
+    {
+      "text": "provide the route to bob bob ricard",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 21,
+          "endPos": 34
+        }
+      ]
+    },
+    {
+      "text": "pull up reservation for candlenut kitchen",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 24,
+          "endPos": 40
+        }
+      ]
+    },
+    {
+      "text": "pull up the kids menu for marios",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "push back the dorrian's red hand restaurant reservation to six for tonight",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 14,
+          "endPos": 42
+        }
+      ]
+    },
+    {
+      "text": "put off the reservation in starbucks on the first avenue",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 27,
+          "endPos": 35
+        }
+      ]
+    },
+    {
+      "text": "quash a table for 6 at marc forgione at half past six pm tonight",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 23,
+          "endPos": 35
+        }
+      ]
+    },
+    {
+      "text": "quash ippudo for table of three at 7 o'clock tonight",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 6,
+          "endPos": 11
+        }
+      ]
+    },
+    {
+      "text": "quickly cancel the reservation that we've made at kyiv restaurant at 7:30 pm tonight",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 50,
+          "endPos": 64
+        }
+      ]
+    },
+    {
+      "text": "rate giuseppe italian restaurant with 5 stars",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "rate little italy in redmond town center with 4 stars",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "rate otto sushi in kirkland juanita 5 stars",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "rate taco bell 5 stars",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "rate walmart as good and post to abc list",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "read local reviews for carmax",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "read local reviews for dave's tree service",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "read me reviews for bill's place",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "read me reviews for huhot",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "read me reviews for pizza villa",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "read me the reviews for applebee s",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "read me the reviews for tgi fridays",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "read reviews for applebee's",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "read reviews for bonefish grill",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "read reviews for crab shack",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "read reviews for el cantina",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "read reviews for joe's clam bar",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "read reviews for olive garden",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "read reviews for panera bread",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "read reviews for red lobster",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "read reviews for stonewood grill",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "read reviews for taco bell",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "read reviews for zaxby's",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "read the reviews for applebee's",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "read the reviews for chili s",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "read the reviews for sugar pike junction",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "read the reviews for the big chicken",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "read the reviews for the gettysburg hilton garden inn",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "read to me the time of the reservations to l'auberge chez francois",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 43,
+          "endPos": 65
+        }
+      ]
+    },
+    {
+      "text": "redo the charleston reservation for tonight so there are five people",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 9,
+          "endPos": 18
+        }
+      ]
+    },
+    {
+      "text": "remove my fraunces tavern plans for three",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 10,
+          "endPos": 24
+        }
+      ]
+    },
+    {
+      "text": "remove the reservation at kyiv restaurant half past six",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 26,
+          "endPos": 40
+        }
+      ]
+    },
+    {
+      "text": "remove veniero's restaurant reservation",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 7,
+          "endPos": 15
+        }
+      ]
+    },
+    {
+      "text": "reschedule my reservation for tomorrow at joy ranch bbq",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 42,
+          "endPos": 54
+        }
+      ]
+    },
+    {
+      "text": "rescind a table for two at zuma tonight at a quarter past nine p.m.",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 27,
+          "endPos": 30
+        }
+      ]
+    },
+    {
+      "text": "rescind grodzinski bakery reservation for a table of 7 tonight at seven o'clock",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 8,
+          "endPos": 24
+        }
+      ]
+    },
+    {
+      "text": "rescind reservations for a table of 4 at le bernardin at a quarter to nine tonight",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 41,
+          "endPos": 52
+        }
+      ]
+    },
+    {
+      "text": "reservation at 54 below at twenty past nine tonight for 2 people",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 15,
+          "endPos": 22
+        }
+      ]
+    },
+    {
+      "text": "reservation time for sage thai",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 21,
+          "endPos": 29
+        }
+      ]
+    },
+    {
+      "text": "reservations for 7:00 p.m. at zuma",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 30,
+          "endPos": 33
+        }
+      ]
+    },
+    {
+      "text": "reserve a seat for four people at albannach",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 34,
+          "endPos": 42
+        }
+      ]
+    },
+    {
+      "text": "reserve a spot at marc forgione",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 18,
+          "endPos": 30
+        }
+      ]
+    },
+    {
+      "text": "reserve a table at arethusa al tavolo at half past five p m",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 19,
+          "endPos": 36
+        }
+      ]
+    },
+    {
+      "text": "reserve a table at australia dairy company",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 19,
+          "endPos": 41
+        }
+      ]
+    },
+    {
+      "text": "reserve a table for 5 at zaro's bakery at ten to seven tonight",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 25,
+          "endPos": 37
+        }
+      ]
+    },
+    {
+      "text": "reserve bickford's supper",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 8,
+          "endPos": 15
+        }
+      ]
+    },
+    {
+      "text": "reserve me a place at the chicago pizza pie factory",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 22,
+          "endPos": 50
+        }
+      ]
+    },
+    {
+      "text": "reserve me a table at grodzinski bakery",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 22,
+          "endPos": 38
+        }
+      ]
+    },
+    {
+      "text": "reserve table for five at kedai makan",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 26,
+          "endPos": 36
+        }
+      ]
+    },
+    {
+      "text": "reserve the supper by hard rock cafe on 4 p.m.",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 22,
+          "endPos": 35
+        }
+      ]
+    },
+    {
+      "text": "reserve us a table for 6 at wong's king at eight o'clock",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 28,
+          "endPos": 38
+        }
+      ]
+    },
+    {
+      "text": "restaurant reviews for evo",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "restaurants reviews for istedi a coupon",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "retrieve reservations for chi spacca 's 6:30 at 7:00 p.m.",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 26,
+          "endPos": 35
+        }
+      ]
+    },
+    {
+      "text": "reviews and read local reviews for donatoes pizza",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "reviews and read local reviews for donatos pizza",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "reviews for gatto's restaurant in tinley park",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "reviews for mcdonalds",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "reviews for select hospital in oklahoma city",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "reviews for suncadia resort washington",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "reviews for vesta dipping grill barolo grill and 1515 restaurant",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "reviews of central bistro and bar in denver",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "reviews of kid s corner learning center in slidell louisiana",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "reviews of nikki steakhouse in estes park",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "reviews of the post restaurant in durham ct",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "reviews on advanced appliance service company inc in nashville tennessee",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "reviews on the panda wok in greenville new hampshire",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "reviews on the post in durham connecticut",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "rite aid on preston highway s phone number",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "rite aid s phone number on randleman road",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "ryan's steakhouse price ranges in knoxville tn",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "save my current location as national park",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "search bank of america edwardsville phone number",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "see if i have a table booked for 6:30 p.m. at 7 at club gascon",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 51,
+          "endPos": 61
+        }
+      ]
+    },
+    {
+      "text": "see the cocktail menu for lucys",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "see the menu for chipotle",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "send an email cancelling my reservation for 4 at amber 's today at half past seven pm",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 49,
+          "endPos": 53
+        }
+      ]
+    },
+    {
+      "text": "send burrito bowl to 757 w. ivy st. bensalem, pa 19020 from chipotle",
+      "intent": "OrderFood",
+      "entities": [
+        {
+          "entity": "Food",
+          "startPos": 5,
+          "endPos": 16
+        },
+        {
+          "entity": "StreetNumber",
+          "startPos": 21,
+          "endPos": 23
+        },
+        {
+          "entity": "Address",
+          "startPos": 21,
+          "endPos": 53
+        },
+        {
+          "entity": "StreetName",
+          "startPos": 25,
+          "endPos": 33
+        },
+        {
+          "entity": "City",
+          "startPos": 36,
+          "endPos": 43
+        },
+        {
+          "entity": "State",
+          "startPos": 46,
+          "endPos": 47
+        },
+        {
+          "entity": "ZipCode",
+          "startPos": 49,
+          "endPos": 53
+        },
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 60,
+          "endPos": 67
+        }
+      ]
+    },
+    {
+      "text": "send cheese pizza to 724 south rockville ave. stockbridge, ga 30281 from joe's pizza",
+      "intent": "OrderFood",
+      "entities": [
+        {
+          "entity": "Food",
+          "startPos": 5,
+          "endPos": 16
+        },
+        {
+          "entity": "StreetNumber",
+          "startPos": 21,
+          "endPos": 23
+        },
+        {
+          "entity": "Address",
+          "startPos": 21,
+          "endPos": 66
+        },
+        {
+          "entity": "StreetName",
+          "startPos": 25,
+          "endPos": 43
+        },
+        {
+          "entity": "City",
+          "startPos": 46,
+          "endPos": 56
+        },
+        {
+          "entity": "State",
+          "startPos": 59,
+          "endPos": 60
+        },
+        {
+          "entity": "ZipCode",
+          "startPos": 62,
+          "endPos": 66
+        },
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 73,
+          "endPos": 83
+        }
+      ]
+    },
+    {
+      "text": "send chicken wings to 7287 north cottage ave. camden, nj 08105 from popeye's",
+      "intent": "OrderFood",
+      "entities": [
+        {
+          "entity": "Food",
+          "startPos": 5,
+          "endPos": 17
+        },
+        {
+          "entity": "StreetNumber",
+          "startPos": 22,
+          "endPos": 25
+        },
+        {
+          "entity": "Address",
+          "startPos": 22,
+          "endPos": 61
+        },
+        {
+          "entity": "StreetName",
+          "startPos": 27,
+          "endPos": 43
+        },
+        {
+          "entity": "City",
+          "startPos": 46,
+          "endPos": 51
+        },
+        {
+          "entity": "State",
+          "startPos": 54,
+          "endPos": 55
+        },
+        {
+          "entity": "ZipCode",
+          "startPos": 57,
+          "endPos": 61
+        },
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 68,
+          "endPos": 73
+        }
+      ]
+    },
+    {
+      "text": "send pizza to 724 south rockville ave. stockbridge, ga 30281 from joe's pizza",
+      "intent": "OrderFood",
+      "entities": [
+        {
+          "entity": "Food",
+          "startPos": 5,
+          "endPos": 9
+        },
+        {
+          "entity": "StreetNumber",
+          "startPos": 14,
+          "endPos": 16
+        },
+        {
+          "entity": "Address",
+          "startPos": 14,
+          "endPos": 59
+        },
+        {
+          "entity": "StreetName",
+          "startPos": 18,
+          "endPos": 36
+        },
+        {
+          "entity": "City",
+          "startPos": 39,
+          "endPos": 49
+        },
+        {
+          "entity": "State",
+          "startPos": 52,
+          "endPos": 53
+        },
+        {
+          "entity": "ZipCode",
+          "startPos": 55,
+          "endPos": 59
+        },
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 66,
+          "endPos": 76
+        }
+      ]
+    },
+    {
+      "text": "send tacos to 7682 deerfield ave. decatur, ga 30030 from del taco",
+      "intent": "OrderFood",
+      "entities": [
+        {
+          "entity": "Food",
+          "startPos": 5,
+          "endPos": 9
+        },
+        {
+          "entity": "StreetNumber",
+          "startPos": 14,
+          "endPos": 17
+        },
+        {
+          "entity": "Address",
+          "startPos": 14,
+          "endPos": 50
+        },
+        {
+          "entity": "StreetName",
+          "startPos": 19,
+          "endPos": 31
+        },
+        {
+          "entity": "City",
+          "startPos": 34,
+          "endPos": 40
+        },
+        {
+          "entity": "State",
+          "startPos": 43,
+          "endPos": 44
+        },
+        {
+          "entity": "ZipCode",
+          "startPos": 46,
+          "endPos": 50
+        },
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 57,
+          "endPos": 64
+        }
+      ]
+    },
+    {
+      "text": "send tacos to 90 bridgeton st. elyria, oh 44035 from tijuana flats",
+      "intent": "OrderFood",
+      "entities": [
+        {
+          "entity": "Food",
+          "startPos": 5,
+          "endPos": 9
+        },
+        {
+          "entity": "StreetNumber",
+          "startPos": 14,
+          "endPos": 15
+        },
+        {
+          "entity": "Address",
+          "startPos": 14,
+          "endPos": 46
+        },
+        {
+          "entity": "StreetName",
+          "startPos": 17,
+          "endPos": 29
+        },
+        {
+          "entity": "City",
+          "startPos": 31,
+          "endPos": 36
+        },
+        {
+          "entity": "State",
+          "startPos": 39,
+          "endPos": 40
+        },
+        {
+          "entity": "ZipCode",
+          "startPos": 42,
+          "endPos": 46
+        },
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 53,
+          "endPos": 65
+        }
+      ]
+    },
+    {
+      "text": "shoe warehouse courtenay store hours",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "show cocktail menu for pizza villa",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "show drink menu for green iguana",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "show duffy's happy hour menu",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "show gotham bar and grill location",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 5,
+          "endPos": 24
+        }
+      ]
+    },
+    {
+      "text": "show kid's menu at kfc",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "show kids menu for pizza hut",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "show lala bar on the map",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 5,
+          "endPos": 12
+        }
+      ]
+    },
+    {
+      "text": "show my jack’s place reservation for 7",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 8,
+          "endPos": 19
+        }
+      ]
+    },
+    {
+      "text": "show reservation time for genki sushi",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 26,
+          "endPos": 36
+        }
+      ]
+    },
+    {
+      "text": "show sage thai reasturant location",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 5,
+          "endPos": 13
+        }
+      ]
+    },
+    {
+      "text": "show sushi yasuda reservation",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 5,
+          "endPos": 16
+        }
+      ]
+    },
+    {
+      "text": "show the cocktail menu for becky s place",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "show the kids menu for mcdonald's",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "show the locale of my reservation for zucca",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 38,
+          "endPos": 42
+        }
+      ]
+    },
+    {
+      "text": "show the marea reservation for seven",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 9,
+          "endPos": 13
+        }
+      ]
+    },
+    {
+      "text": "show the menu for vito's cafe",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "show time of true food kitchen reservation",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 13,
+          "endPos": 29
+        }
+      ]
+    },
+    {
+      "text": "show zucca restaurant on map",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 5,
+          "endPos": 9
+        }
+      ]
+    },
+    {
+      "text": "spring valley autozone phone number",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "starbucks new york address",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "steak and shake s menu",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "switch my tonight 's reservation to kyiv restaurant from luk yu",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 36,
+          "endPos": 50
+        },
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 57,
+          "endPos": 62
+        }
+      ]
+    },
+    {
+      "text": "taco bell's menu",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "take away the reservation for kennedy fried chicken at seven",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 30,
+          "endPos": 50
+        }
+      ]
+    },
+    {
+      "text": "telephone number for cedar point sandusky ohio",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "telephone number for holley and steer solicitors in burnham on sea",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "telephone number for norwalk hospital",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "telephone number for staples at squires gate blackpool",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "the address for abc company in birmingham",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "the address for gleason works rochester new york",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "the address for heiney brothers coffee",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "the address for live oak baptist church in denham springs",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "the address for the cafe vita",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "the address for the dinner boat cruise in chattanooga tennessee",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "the address for the red cross",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "the address of the barge in gillingham kent",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "the address of the boots on clapham high street london",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "the address of the lowes store on rainier in seattle",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "the address of the walmart in derby kansas",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "the address to cinebarre issaquah",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "the address to cinemark farmington at station park",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "the address to fatburger in southgate california",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "the address to itt tech in virginia beach virginia",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "the address to river woods conference center",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "the address to the ymca in salisbury north carolina",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "the cocktail menu for steveno",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "the happy hour menu at carrabas",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "the happy hour menu for chilis",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "the happy hour menu for gunpowder lodge",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "the happy hour menu for the beachcomber in wellfleet",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "the kid's menu at olive garden",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "the menu at park burger",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "the menu for abc saffron walden",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "the menu for applebees on west lafayette road",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "the menu for el pollo loco",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "the menu for great wall china in faversham",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "the menu for roadhouse grill grand lake colorado",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "the number for cinnabons at mayfair mall",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "the number to burlington coat factory",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "the number to panther riverside park atlanta georgia",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "the number to walgreens of mcmahon",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "the old spaghetti factory menu",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "the phone number for the t mobile store closest to me",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "the phone number of the harvest restaurant",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "the phone number to taco bell",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "the ratings for olive garden",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "the ratings for pim s thai restaurant",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "the reservation for tonight at the woodsman tavern at no.300 112th ave se needs to completed, yes.",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 31,
+          "endPos": 49
+        }
+      ]
+    },
+    {
+      "text": "the reservation for veraci pizza is no longer need. delete it.",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 20,
+          "endPos": 31
+        }
+      ]
+    },
+    {
+      "text": "the reviews for on the border",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "the reviews for sandy s by the beech bar",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "the reviews for strada restaurant",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "the reviews for west end cafe",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "the star seafood floating restaurant reservation for a quarter to eight",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 4,
+          "endPos": 35
+        }
+      ]
+    },
+    {
+      "text": "the table for tonight at amber needs to be confirmed.",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 25,
+          "endPos": 29
+        }
+      ]
+    },
+    {
+      "text": "the tennessean center denver colorado address",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "the time of my reservation market restaurant and bar",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 27,
+          "endPos": 51
+        }
+      ]
+    },
+    {
+      "text": "the time of reservation tomorrow at bloom's restaurant",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 36,
+          "endPos": 53
+        }
+      ]
+    },
+    {
+      "text": "the time of the reservation at asiate",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 31,
+          "endPos": 36
+        }
+      ]
+    },
+    {
+      "text": "the time of the reservations to le bernardin",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 32,
+          "endPos": 43
+        }
+      ]
+    },
+    {
+      "text": "the white peacock restaurant in leicester menu",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "time of murray's sturgeon shop reservation",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 8,
+          "endPos": 29
+        }
+      ]
+    },
+    {
+      "text": "u haul's number in janesville wisconsin",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "university of la crosse wisconsin la crosse address",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "walmart business hours",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "was there an reservation for kai mayfair at ten past six p.m.",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 29,
+          "endPos": 39
+        }
+      ]
+    },
+    {
+      "text": "we are changing the place to dine to l'entrecôte",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 37,
+          "endPos": 47
+        }
+      ]
+    },
+    {
+      "text": "we need to call barclay prime to see if they can push back my reservation one hour",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 16,
+          "endPos": 28
+        }
+      ]
+    },
+    {
+      "text": "we need to get ahold of kfc to switch that reservation time",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 24,
+          "endPos": 26
+        }
+      ]
+    },
+    {
+      "text": "we need to get ahold of weiya restaurant to switch that reservation time",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 24,
+          "endPos": 39
+        }
+      ]
+    },
+    {
+      "text": "we now have seven more people to add to dinner at the halal guys",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 50,
+          "endPos": 63
+        }
+      ]
+    },
+    {
+      "text": "we want dining in kfc not dicos",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 18,
+          "endPos": 20
+        },
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 26,
+          "endPos": 30
+        }
+      ]
+    },
+    {
+      "text": "wendy s washroom on east patapsco avenue baltimore maryland the phone number",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what are the business hours for costco",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what are the hours for naturally flyy on fridays",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what are the hours for stone mountain park tomorrow",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what are the hours for the pima air museum",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what are the hours for the target in broken arrow",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what are the hours of best buy new york new hartford",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what are the hours of great clips in madison ohio tomorrow",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what are the hours of operation for emily's playhouse on sunday",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what are the hours of operation for summer house patio furniture store in bellevue",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what are the hours of the closest chase",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what are the hours of tucson community acupuncture",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what are the hours that gamestop is open",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what are the open hours for sports clips",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what are the opening hours for monsoon restaurant capitol hill seattle",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what are the opening hours for tesco in chesterton",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what are the opening hours of ikea edmonton",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what are the opening hours of tesco in weybridge",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what are the ratings for chilis",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what are the ratings for fleming island bar and grill",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what are the ratings for kfc",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what are the ratings for outback",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what are the ratings for pim s thai restaurant",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what are the reviews for bonefish grill",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what are the reviews for hilton hotel in portland oregon",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what are the reviews for house of mac and cheese",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what are the reviews for little tokyo",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what are the reviews for red robin",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what are the reviews for silver fox steakhouse",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what are the reviews on william penn inn",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what are the safeway pharmacy hours",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what are the store hours for everything party in redmond washington",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what are the store hours for target",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what are the store hours of target supercenter",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what are the sunday hours for sally beauty on university drive",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what are trustmark banks hours",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what is olive garden's menu",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what is on the menu at restaurant fifty five in dover delaware",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what is the address for abc restaurant on webster avenue in bronx new york",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what is the address for thames valley park",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what is the address for the nearest starbucks",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what is the address for vancouver international airport",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what is the address of abc high school",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what is the address of the comfort suites in chestertown maryland",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what is the address to advantage rent a car on narcoossee in orlando",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what is the address to applebee's",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what is the address to the closest autozone",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what is the costco store hours",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what is the distance to willis tower",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what is the menu at foster's pint and plate in rogers arkansas",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what is the number to the local ywca",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what is the phone number for jay's bistro fort collins colorado",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what is the phone number for the nearest pei wei asian restaurant",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what is the phone number of starbucks",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what is the phone number of the mukilteo library in washington state",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what is the price range at new york prime",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what is the price range at sal's italtian restaraunt",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what is the price range for chipotle",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what is the price range for olive garden",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what is the price range for panera",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what is the price range for subway",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what is the price range for sushi boat",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what is the price range of blue dog tavern in chalfont",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what is the price range of lily's in doylestown",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what is the price range of maxwell's in doylestown",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what is the price range of the freight house in doylestown",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what is the telephone number for coward tv sales and service georgia",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what is the time of my reservation at jean georges, the french cuisine restaurant",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 38,
+          "endPos": 49
+        }
+      ]
+    },
+    {
+      "text": "what is the time of the reservation at albannach",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 39,
+          "endPos": 47
+        }
+      ]
+    },
+    {
+      "text": "what s the address for belmont park san diego",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what s the address of the gate in islington",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what s the address of the henson studio",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what s the price range of mashiko",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what s the price range of papa john's pizza in cedar park",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what s the price range of wild ginger",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what time does aldi s close",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what time does bank of america open tomorrow morning",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what time does best buy in johnson city tennessee close today",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what time does best buy in niles ohio open",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what time does costco open until",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what time does evans bike shop in victoria open tomorrow morning",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what time does hemel hempstead hsbc open today",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what time does nordstrom at park meadows mall close",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what time does sam's close",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what time does the dupont branch library close tonight",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what time does the experience music project in seattle open today",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what time does the nearest cricket wireless store open",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what time does the party place open on saturdays",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what time does toysrus at lakeside open today",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what time is dinner at zuma 's?",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 23,
+          "endPos": 26
+        }
+      ]
+    },
+    {
+      "text": "what time is kohl's open till in woodberry",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what time is macy s orland park open till",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what time is reservation for kuo yuan, the noodle restaurant",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 29,
+          "endPos": 36
+        }
+      ]
+    },
+    {
+      "text": "what time is susan's store in freehold new jersey open till",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what time is tesco open today",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what time is the apollo school of beauty open",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what time is the exeter arms open in rutland",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what time is the microsoft store open until",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what's price range at serious pie in seattle",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what's the address for the microsoft store in arlington virginia",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what's the average cost for a icecream inside the disneyland",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what's the average cost for an adult ticket in broadway",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what's the average for the famous pizza in chicago",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what's the average price for a movie ticket in amc",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what's the closest target store here",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what's the cost range per person for tipsy cow in woodenwill",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what's the nearest mcdonald's next to me",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "whats the phone number for acme ice house",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "whats the phone number of the space needle",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "whats the phone number to applebees on one forty one in arnold missouri",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what's the price range for a broadway show ticket",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what's the price range for a cruise tour in lake washington",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what's the price range for an opera show in seattle",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what's the price range for five guys burger",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what's the price range for in and out burger",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what's the price range for the ranch bar",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what's the rating for hilton in bellevue downtown according to bing",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what's the rating for santoka in bellevue downtown",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what's the rating for the hyatt region in seattle downtown",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what's the rating for the state park near finn hill",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what's the rating of red lobster in lynnwood",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what't the average price for a quick meal in the big apple",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "when does clark tire in gastonia open tomorrow",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "when does costco covington open",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "when does food city on nineteenth ave and indian school close",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "when does the boise dmv open",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "when does the fred meyer pharmacy close",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "when does the high cross in leicester open",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "when does the peninsula town center open today",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "when is the reservation at hi bar",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 27,
+          "endPos": 32
+        }
+      ]
+    },
+    {
+      "text": "when should we go to zucca where i reserved a table for four",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 21,
+          "endPos": 25
+        }
+      ]
+    },
+    {
+      "text": "where can i find starbucks coffee",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "where chico madrid is located",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 6,
+          "endPos": 17
+        }
+      ]
+    },
+    {
+      "text": "where is bus stop 77",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "where is cranks located",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 9,
+          "endPos": 14
+        }
+      ]
+    },
+    {
+      "text": "where is good to go in bellevue",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "where is parking at navy pier",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "will i be eating at korilla bbq at seven p. m.",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 20,
+          "endPos": 30
+        }
+      ]
+    },
+    {
+      "text": "wipe out 8:00 p.m 's reservation at hawker centre",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 36,
+          "endPos": 48
+        }
+      ]
+    },
+    {
+      "text": "would you change the metropolitan museum of art roof garden reservation to 8:00 tonight",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 21,
+          "endPos": 58
+        }
+      ]
+    },
+    {
+      "text": "would you change the reservation for tomorrow to patsy's",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 49,
+          "endPos": 55
+        }
+      ]
+    },
+    {
+      "text": "would you mind deleting the reservation for bar italia a quarter past seven",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 44,
+          "endPos": 53
+        }
+      ]
+    },
+    {
+      "text": "yank my table reservation for 3 at second avenue deli",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 35,
+          "endPos": 52
+        }
+      ]
+    },
+    {
+      "text": "yes, i would like for you to make this reservation for me for 7:30 at 7 for 6 at townsend",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 81,
+          "endPos": 88
+        }
+      ]
+    },
+    {
+      "text": "you can cancel fenglin-joy dinner",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 15,
+          "endPos": 25
+        }
+      ]
+    },
+    {
+      "text": "you can mark this reservation as a yes for tribeca grill tonight",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RestaurantReservation.PlaceName",
+          "startPos": 43,
+          "endPos": 55
+        }
+      ]
+    }
+  ],
+  "settings": []
+}
